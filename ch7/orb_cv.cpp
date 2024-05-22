@@ -60,19 +60,27 @@ int main(int argc, char **argv) {
 
   //当描述子之间的距离大于两倍的最小距离时,即认为匹配有误.但有时候最小距离会非常小,设置一个经验值30作为下限.
   std::vector<DMatch> good_matches;
+  std::vector<DMatch> not_so_good_matches;
+
   for (int i = 0; i < descriptors_1.rows; i++) {
     if (matches[i].distance <= max(2 * min_dist, 30.0)) {
       good_matches.push_back(matches[i]);
+    }
+    if (matches[i].distance <= min_dist) {
+      not_so_good_matches.push_back(matches[i]);
     }
   }
 
   //-- 第五步:绘制匹配结果
   Mat img_match;
   Mat img_goodmatch;
+  Mat img_not_so_goodmatch;
   drawMatches(img_1, keypoints_1, img_2, keypoints_2, matches, img_match);
   drawMatches(img_1, keypoints_1, img_2, keypoints_2, good_matches, img_goodmatch);
+  drawMatches(img_1, keypoints_1, img_2, keypoints_2, not_so_good_matches, img_not_so_goodmatch);
   imshow("all matches", img_match);
   imshow("good matches", img_goodmatch);
+  imshow("not so good matches", img_not_so_goodmatch);
   waitKey(0);
 
   return 0;
