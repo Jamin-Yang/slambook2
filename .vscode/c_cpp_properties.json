@@ -4,10 +4,17 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/eigen3"
+                "/usr/include/eigen3/",
+                "/usr/include/eigen3/Eigen",
+                "/usr/local/include/opencv2",
+                "/usr/local/include/opencv",
+                "/usr/local/include",
+                "/usr/include",
+                "/usr/local/include/sophus",
+                "/usr/local/include/pangolin"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-arm64"

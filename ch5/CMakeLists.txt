@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_BUILD_TYPE "Debug")
 # 添加c++ 11标准支持
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2")
 
