@@ -231,9 +231,9 @@ void OpticalFlowTracker::calculateOpticalFlow(const Range &range) {
                     if (inverse == false) {
                         J = -1.0 * Eigen::Vector2d(
                             0.5 * (GetPixelValue(img2, kp.pt.x + dx + x + 1, kp.pt.y + dy + y) -
-                                   GetPixelValue(img2, kp.pt.x + dx + x - 1, kp.pt.y + dy + y)),
+                                   GetPixelValue(img2, kp.pt.x + dx + x - 1, kp.pt.y + dy + y)),    // dJ/dx
                             0.5 * (GetPixelValue(img2, kp.pt.x + dx + x, kp.pt.y + dy + y + 1) -
-                                   GetPixelValue(img2, kp.pt.x + dx + x, kp.pt.y + dy + y - 1))
+                                   GetPixelValue(img2, kp.pt.x + dx + x, kp.pt.y + dy + y - 1))     // dJ/dy
                         );
                     } else if (iter == 0) {
                         // in inverse mode, J keeps same for all iterations

@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
       J[2] = -exp(ae * xi * xi + be * xi + ce);  // de/dc
 
       H += inv_sigma * inv_sigma * J * J.transpose();
-      b += -inv_sigma * inv_sigma * error * J;
+      b += -inv_sigma * inv_sigma * error * J;  // error is f(x)
 
       cost += error * error;
     }
