@@ -8,6 +8,7 @@
             "args": [
                 "-g",
                 "${file}",
+                "${fileDirname}/common.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "`pkg-config",
@@ -16,11 +17,20 @@
                 "opencv`",
                 "-I/usr/include/eigen3",
                 "-I/usr/local/include/pangolin",
+                "-I/usr/include/ceres",
                 "-lpangolin",
                 "-lGL",
                 "-lGLU",
                 "-lGLEW",
-
+                "-lceres",                   // 链接 Ceres 库
+                "-lglog",                    // 链接 Google glog 库
+                "-lgflags",                  // 链接 Google gflags 库
+                // "-lcholmod",                 // 链接 SuiteSparse CHOLMOD 库
+                // "-lmetis",                   // 链接 SuiteSparse METIS 库
+                // "-llapack",                  // 链接 LAPACK 库
+                // "-lblas",                    // 链接 BLAS 库
+                // "-lm",                       // 链接数学库
+                // "-lpthread"                  // 链接 pthread 库
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
 project(bundle_adjustment)
 set(CMAKE_BUILD_TYPE "Release")
 set(CMAKE_CXX_FLAGS "-O3 -std=c++11")
-
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 Find_Package(G2O REQUIRED)

@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": ["/home/parallels/slambook2/ch9/problem-16-22106-pre.txt"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/ch8",
             "environment": [
