@@ -8,7 +8,7 @@
             "args": [
                 "-g",
                 "${file}",
-                "${fileDirname}/common.cpp",
+                // "${fileDirname}/common.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "`pkg-config",
@@ -25,6 +25,12 @@
                 "-lceres",                   // 链接 Ceres 库
                 "-lglog",                    // 链接 Google glog 库
                 "-lgflags",                  // 链接 Google gflags 库
+                "-I/usr/local/include/g2o",
+                "-lg2o_core",                        // Link g2o core library
+                "-lg2o_stuff",                       // Link g2o stuff library
+                "-lg2o_types_slam2d",                // Link g2o 2D types library, adjust as needed
+                "-lg2o_solver_csparse",              // Link g2o CSparse solver
+                "-lg2o_csparse_extension",           // Link g2o CSparse extension
                 // "-lcholmod",                 // 链接 SuiteSparse CHOLMOD 库
                 // "-lmetis",                   // 链接 SuiteSparse METIS 库
                 // "-llapack",                  // 链接 LAPACK 库
